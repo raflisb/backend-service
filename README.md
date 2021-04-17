@@ -13,7 +13,7 @@ A Backend Service using GO with with JWT AUTH and some cool Feature
 
 ## Installation
 
-Please run this command after pull the repo to get all the vendor dependency 
+Please run this command after pull the repo to get all the vendor dependencies
 
 ```bash
 go mod vendor
