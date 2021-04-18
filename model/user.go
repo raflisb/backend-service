@@ -10,5 +10,4 @@ type User struct {
 	Phone		string	`json:"phone"`
 	Password	string	`json:"-"`
 	Email		string	`gorm:unique json:"email"` 
-
 }
