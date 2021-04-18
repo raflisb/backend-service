@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/raflisb/backend-service/model"
+	"github.com/raflisb/backend-service/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -33,5 +33,5 @@ func Init() {
 
 func migration() {
 	// Register the model to migrate here
-	DB.AutoMigrate(&model.User{})
+	DB.AutoMigrate(&models.User{})
 }
