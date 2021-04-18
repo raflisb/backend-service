@@ -9,6 +9,7 @@ import (
 
 	"github.com/joho/godotenv"
 	"github.com/raflisb/backend-service/database"
+	"github.com/raflisb/backend-service/routes"
 )
 
 func main() {
@@ -17,5 +18,6 @@ func main() {
 		fmt.Println("Error loading .env file")
 	}
 	database.Init()
-
+	r := routes.SetupRouter()
+	r.Run(":7000")
 }
