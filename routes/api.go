@@ -3,6 +3,7 @@ package routes
 import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	"github.com/raflisb/backend-service/controller"
 )
 
 func SetupRouter() *gin.Engine {
@@ -14,9 +15,7 @@ func SetupRouter() *gin.Engine {
 		ExposeHeaders: []string{"Content-Length"},
 	}))
 
-	r.GET("/ping", func(c *gin.Context) {
-		c.String(200, "pong")
-	})
+	r.GET("/ping", controller.IndexUsers)
 
 	return r
 }
