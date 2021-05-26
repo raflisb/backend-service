@@ -3,7 +3,7 @@ package routes
 import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/raflisb/backend-service/controllers/usercontroller"
+	usercontroller "github.com/raflisb/backend-service/controllers/user"
 )
 
 func SetupRouter() *gin.Engine {
