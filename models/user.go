@@ -1,6 +1,7 @@
 package models
 
 import (
+	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 )
 
@@ -16,4 +17,11 @@ type User struct {
 type UserDetail struct {
 	Address string `gorm:"type:varchar(200);" json:"address"`
 	Country string `gorm:"type:varchar(50);" json:"country"`
+}
+
+func (user *User) BeforeSave(tx *gorm.DB) (err error) {
+	if pw, err := bcrypt.GenerateFromPassword([]byte(user.Password), 2); err == nil {
+		tx.Statement.SetColumn("Password", pw)
+	}
+	return
 }

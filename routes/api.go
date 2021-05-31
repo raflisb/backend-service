@@ -15,7 +15,7 @@ func SetupRouter() *gin.Engine {
 		ExposeHeaders: []string{"Content-Length"},
 	}))
 
-	r.GET("/ping", usercontroller.IndexUsers)
-
+	r.GET("/user", usercontroller.IndexUsers)
+	r.POST("/user", usercontroller.StoreUser)
 	return r
 }
